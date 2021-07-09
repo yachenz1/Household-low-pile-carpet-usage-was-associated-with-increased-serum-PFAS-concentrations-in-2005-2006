@@ -783,7 +783,7 @@ figure6 <-
   scale_colour_discrete("Type of Flooring") 
 
 
-workdir <- ""
+workdir <- " "
 tiff(file.path(workdir, "PFASGeometricMeans.tiff"), width = 16, height = 8, units = 'in', res = 600)
 figure <- ggarrange(figure1, figure2, figure3, figure4, figure5, figure6,
                     labels = c("A", "B", "C", "D", "E", "F"),
@@ -803,7 +803,7 @@ data1 <- read_excel("data1.xlsx")
 
 data1$PFAS <- factor(data1$PFAS, levels = c('PFOA', 'PFOS', 'PFHxS', 'MeFOSAA', 'PFDA', 'PFNA'))
 
-tiff(file.path(workdir, "MissingData5.tiff"), width = 12, height = 7, units = 'in', res = 600)
+tiff(file.path(workdir, "MultipleImputation.tiff"), width = 12, height = 7, units = 'in', res = 600)
 
 ggplot(data = data1, aes(x = Type, y = `% difference in serum PFAS concentration`, ymin = LowerLimit, ymax = UpperLimit )) +
   geom_pointrange(aes(col = Type)) +
@@ -826,7 +826,7 @@ data2 <- read_excel("data2.xlsx")
 
 data2$PFAS <- factor(data2$PFAS, levels = c('PFOA', 'PFOS', 'PFHxS', 'MeFOSAA', 'PFDA', 'PFNA'))
 
-tiff(file.path(workdir, "MissingData6.tiff"), width = 12, height = 7, units = 'in', res = 600)
+tiff(file.path(workdir, "CompleteCaseAnalysis.tiff"), width = 12, height = 7, units = 'in', res = 600)
 
 ggplot(data = data2, aes(x = Type, y = `% difference in serum PFAS concentration`, ymin = LowerLimit, ymax = UpperLimit )) +
   geom_pointrange(aes(col = Type)) +
